@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Calculator</title>
+		<style type="text/css">
+			:root {
+				--fontFamily: Ubuntu, sans-serif;
+
+				--background: #ddd;
+				--onBackground: #444;
+			}
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--background: #222;
+					--onBackground: #ddd;
+				}
+			}
+
+			body {
+				background-color: var(--background);
+				color: var(--onBackground);
+				font-family: var(--fontFamily);
+			}
+			form {
+				background-color: #fff1;
+				border: 1px solid #0008;
+				display: inline-block;
+				padding: 1rem;
+			}
+			form + form {
+				margin-left: 4px;
+			}
+			input, button {
+				font-size: 16px;
+				padding: 0.5em 0.75em;
+			}
+			label > input {
+				margin-left: 0.5em;
+			}
+			.row {
+				margin-bottom: 1rem;
+			}
+			.row:last-of-type {
+				margin-bottom: 0;
+			}
+			.row.actions {
+				text-align: right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Calculator</h1>
+
+		<form method="GET" action="/add">
+			<div class="row">
+				<label>
+					A:
+					<input type="text" name="a" autofocus>
+				</label>
+			</div>
+			<div class="row">
+				<label>
+					B:
+					<input type="text" name="b">
+				</label>
+			</div>
+			<div class="row actions">
+				<button type="submit">Add A+B</button>
+			</div>
+		</form>
+
+		<form method="GET" action="/mul">
+			<div class="row">
+				<label>
+					A:
+					<input type="text" name="a" autofocus>
+				</label>
+			</div>
+			<div class="row">
+				<label>
+					B:
+					<input type="text" name="b">
+				</label>
+			</div>
+			<div class="row actions">
+				<button type="submit">Multiply A*B</button>
+			</div>
+		</form>
+	</body>
+</html>
